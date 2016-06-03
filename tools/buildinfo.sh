@@ -55,5 +55,6 @@ if [ -n "$BUILD_THUMBPRINT" ] ; then
   echo "ro.build.thumbprint=$BUILD_THUMBPRINT"
 fi
 echo "ro.build.characteristics=$TARGET_AAPT_CHARACTERISTICS"
+echo "persist.radio.multisim.config=dsds"
 
 echo "# end build properties"
