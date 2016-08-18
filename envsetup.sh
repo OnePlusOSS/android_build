@@ -467,6 +467,49 @@ add_lunch_combo aosp_mips64-eng
 add_lunch_combo aosp_x86-eng
 add_lunch_combo aosp_x86_64-eng
 
+print_prjname()
+{
+    echo
+    echo "select project:"
+    echo "   1.  OneplusX"
+    echo "   2.  OneplusOne"
+    echo
+}
+
+chooseproject()
+{
+    local default_value=OneplusX
+    local ANSWER
+    print_prjname
+    echo -n "Which would you like? [$default_value] "
+    if [[ -n "$1" ]] ; then
+        ANSWER=$1
+    else
+        read ANSWER
+    fi
+
+    echo "$ANSWER"
+    echo
+
+    case $ANSWER in
+        1)
+            export ONEPLUS_PRJ_NAME=15055
+        ;;
+        OneplusX)
+            export ONEPLUS_PRJ_NAME=15055
+        ;;
+        2)
+            export ONEPLUS_PRJ_NAME=14001
+        ;;
+        OneplusOne)
+            export ONEPLUS_PRJ_NAME=14001
+        ;;
+        *)
+            export ONEPLUS_PRJ_NAME=15055
+        ;;
+    esac
+}
+
 function print_lunch_menu()
 {
     local uname=$(uname)
@@ -554,6 +597,8 @@ function lunch()
     export TARGET_BUILD_TYPE=release
 
     echo
+
+    chooseproject $2
 
     set_stuff_for_environment
     printconfig
