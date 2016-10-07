@@ -18,11 +18,7 @@ Invoke ". build/envsetup.sh" from your shell to add the following functions to y
 - sepgrep: Greps on all local sepolicy files.
 - sgrep:   Greps on all local source files.
 - godir:   Go to the directory containing a file.
-- cmremote: Add git remote for CM Gerrit Review
-- cmgerrit: A Git wrapper that fetches/pushes patch from/to CM Gerrit Review
-- cmrebase: Rebase a Gerrit change and push it again
 - mka:      Builds using SCHED_BATCH on all processors
-- reposync: Parallel repo sync using ionice and SCHED_BATCH
 
 Environemnt options:
 - SANITIZE_HOST: Set to 'true' to use ASAN for all host modules. Note that
@@ -493,13 +489,8 @@ function print_lunch_menu()
 
 function brunch()
 {
-    breakfast $*
-    if [ $? -eq 0 ]; then
-        mka bacon
-    else
-        echo "No such item in brunch menu. Try 'breakfast'"
-        return 1
-    fi
+    lunch $*
+    mka bacon
     return $?
 }
 
