@@ -652,6 +652,9 @@ endif
 COMMON_GLOBAL_CPPFLAGS:= -Wsign-promo
 COMMON_RELEASE_CPPFLAGS:=
 
+COMMON_GLOBAL_CFLAGS += -DVENDOR_EDIT
+COMMON_GLOBAL_CPPFLAGS += -DVENDOR_EDIT
+
 GLOBAL_CFLAGS_NO_OVERRIDE := \
     -Werror=int-to-pointer-cast \
     -Werror=pointer-to-int-cast \
