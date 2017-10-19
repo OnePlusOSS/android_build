@@ -612,6 +612,8 @@ function lunch()
     export TARGET_BUILD_VARIANT=$(get_build_var TARGET_BUILD_VARIANT)
     export TARGET_PLATFORM_VERSION=$(get_build_var TARGET_PLATFORM_VERSION)
     export TARGET_BUILD_TYPE=release
+    export SDCLANG_CONFIG="device/qcom/msm8996/sdclang.json"
+    export SDCLANG_AE_CONFIG="common-noship/etc/sdclang.json"
 
     echo
 
