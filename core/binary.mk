@@ -56,6 +56,10 @@ my_native_coverage := $(LOCAL_NATIVE_COVERAGE)
 my_additional_dependencies := $(LOCAL_MODULE_MAKEFILE_DEP) $(LOCAL_ADDITIONAL_DEPENDENCIES)
 my_export_c_include_dirs := $(LOCAL_EXPORT_C_INCLUDE_DIRS)
 
+my_cflags += -DVENDOR_EDIT
+my_cppflags += -DVENDOR_EDIT
+VENDOR_EDIT := true
+
 ifdef LOCAL_IS_HOST_MODULE
 my_allow_undefined_symbols := true
 else
