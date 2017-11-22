@@ -213,6 +213,6 @@ PRODUCT_PACKAGES += \
     audio.a2dp.default
 
 # May need to review why the followings are needed in generic system image.
-PRODUCT_COPY_FILES += \
-    device/generic/goldfish/data/etc/apns-conf.xml:system/etc/apns-conf.xml
+#PRODUCT_COPY_FILES += \
+#    device/generic/goldfish/data/etc/apns-conf.xml:system/etc/apns-conf.xml
 
