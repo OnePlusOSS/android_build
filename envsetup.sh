@@ -628,7 +628,8 @@ function lunch()
       unset TARGET_PLATFORM_VERSION
     fi
     export TARGET_BUILD_TYPE=release
-
+    export SDCLANG_CONFIG="device/qcom/msm8998/sdclang.json"
+    export SDCLANG_AE_CONFIG="common-noship/etc/sdclang.json"
     echo
 
     set_stuff_for_environment
